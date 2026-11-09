@@ -1,0 +1,17 @@
+[
+  {
+    "table": "payments",
+    "key": "PAY-DUPLICATE",
+    "reason": "DUPLICATE_PAYMENT"
+  },
+  {
+    "table": "payments",
+    "key": "PAY-ORPHAN",
+    "reason": "ORPHAN_PAYMENT"
+  },
+  {
+    "table": "installments",
+    "key": "P0002-I07",
+    "reason": "INVALID_AMOUNT"
+  }
+]

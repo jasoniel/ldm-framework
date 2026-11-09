@@ -1,0 +1,75 @@
+[
+  {
+    "incident_id": "ISS-ce4e456ff831",
+    "policy_id": "P0001",
+    "evidence": {
+      "updated_premium_cents": 144000,
+      "scheduled_total_cents": 136000,
+      "variance_cents": 8000,
+      "paid_cents": 40000,
+      "original_installment_count": 12,
+      "affected_installments": [
+        {
+          "installment_id": "P0001-I05",
+          "number": 5,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I06",
+          "number": 6,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I07",
+          "number": 7,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I08",
+          "number": 8,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I09",
+          "number": 9,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I10",
+          "number": 10,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I11",
+          "number": 11,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I12",
+          "number": 12,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        }
+      ],
+      "endorsements": [
+        {
+          "endorsement_id": "END-0001",
+          "policy_id": "P0001",
+          "effective_date": "2026-11-01",
+          "after_installment": "4",
+          "premium_delta": "240.00",
+          "schedule_version": "v2",
+          "allocation_rule": "equal_remaining"
+        }
+      ],
+      "rule": "equal_remaining; exact integer cents; residual to earliest unpaid schedule positions"
+    }
+  }
+]

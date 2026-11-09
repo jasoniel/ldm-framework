@@ -1,0 +1,74 @@
+[
+  {
+    "table": "customers",
+    "rows": 41,
+    "grain": "customer_id",
+    "columns": [
+      "customer_id",
+      "name",
+      "address"
+    ],
+    "missing_by_column": {}
+  },
+  {
+    "table": "policies",
+    "rows": 40,
+    "grain": "policy_id",
+    "columns": [
+      "policy_id",
+      "customer_id",
+      "product",
+      "start_date",
+      "end_date",
+      "original_premium",
+      "installments_count",
+      "currency"
+    ],
+    "missing_by_column": {}
+  },
+  {
+    "table": "installments",
+    "rows": 480,
+    "grain": "installment_id",
+    "columns": [
+      "installment_id",
+      "policy_id",
+      "number",
+      "due_date",
+      "amount",
+      "schedule_version"
+    ],
+    "missing_by_column": {
+      "amount": 1
+    }
+  },
+  {
+    "table": "payments",
+    "rows": 162,
+    "grain": "payment_id",
+    "columns": [
+      "payment_id",
+      "installment_id",
+      "external_reference",
+      "paid_on",
+      "amount",
+      "status"
+    ],
+    "missing_by_column": {}
+  },
+  {
+    "table": "endorsements",
+    "rows": 1,
+    "grain": "endorsement_id",
+    "columns": [
+      "endorsement_id",
+      "policy_id",
+      "effective_date",
+      "after_installment",
+      "premium_delta",
+      "schedule_version",
+      "allocation_rule"
+    ],
+    "missing_by_column": {}
+  }
+]

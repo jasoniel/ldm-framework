@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ldm-framework-demo"
+version = "0.1.1"
+description = "Synthetic insurance modernization, endorsement reconciliation and human-reviewed AI investigation"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+ldm = "ldm.cli:main"
+
+[tool.setuptools]
+packages = ["ldm"]

@@ -1,0 +1,2 @@
+endorsement_id,policy_id,effective_date,after_installment,premium_delta,schedule_version,allocation_rule
+END-0001,P0001,2026-11-01,4,240.00,v2,equal_remaining

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "ISS-7238d0d5e81c",
+    "rule": "DUPLICATE_PAYMENT",
+    "entity": "PAY-DUPLICATE",
+    "severity": "critical",
+    "message": "Repeated external payment reference; excluded from provisional totals pending review",
+    "evidence": {
+      "external_reference": "BANK-0004-01",
+      "identical_business_fields": true
+    }
+  },
+  {
+    "id": "ISS-8287a814df01",
+    "rule": "ORPHAN_PAYMENT",
+    "entity": "PAY-ORPHAN",
+    "severity": "critical",
+    "message": "Payment has no matching installment",
+    "evidence": {}
+  },
+  {
+    "id": "ISS-ce4e456ff831",
+    "rule": "ENDORSEMENT_RECONCILIATION",
+    "entity": "P0001",
+    "severity": "critical",
+    "message": "Scheduled amounts diverge from the versioned business rule",
+    "evidence": {
+      "updated_premium_cents": 144000,
+      "scheduled_total_cents": 136000,
+      "variance_cents": 8000,
+      "paid_cents": 40000,
+      "original_installment_count": 12,
+      "affected_installments": [
+        {
+          "installment_id": "P0001-I05",
+          "number": 5,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I06",
+          "number": 6,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I07",
+          "number": 7,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I08",
+          "number": 8,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I09",
+          "number": 9,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I10",
+          "number": 10,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I11",
+          "number": 11,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        },
+        {
+          "installment_id": "P0001-I12",
+          "number": 12,
+          "actual_cents": 12000,
+          "expected_cents": 13000
+        }
+      ],
+      "endorsements": [
+        {
+          "endorsement_id": "END-0001",
+          "policy_id": "P0001",
+          "effective_date": "2026-11-01",
+          "after_installment": "4",
+          "premium_delta": "240.00",
+          "schedule_version": "v2",
+          "allocation_rule": "equal_remaining"
+        }
+      ],
+      "rule": "equal_remaining; exact integer cents; residual to earliest unpaid schedule positions"
+    }
+  },
+  {
+    "id": "ISS-a4a3f582a515",
+    "rule": "MISSING_AMOUNT",
+    "entity": "P0002-I07",
+    "severity": "critical",
+    "message": "Installment amount is missing or invalid",
+    "evidence": {}
+  },
+  {
+    "id": "ISS-9aa995122d10",
+    "rule": "INVALID_DATE",
+    "entity": "P0003-I06",
+    "severity": "critical",
+    "message": "Invalid installment date",
+    "evidence": {
+      "actual": "2026-11-31",
+      "expected_under_monthly_rule": "2026-12-01"
+    }
+  }
+]

@@ -1,0 +1,117 @@
+{
+  "notice": "Evaluation oracle only. Demo approvals are simulated, never real human review.",
+  "defects": [
+    {
+      "rule": "ENDORSEMENT_RECONCILIATION",
+      "entity": "P0001",
+      "expected_variance_cents": 8000
+    },
+    {
+      "rule": "MISSING_AMOUNT",
+      "entity": "P0002-I07"
+    },
+    {
+      "rule": "INVALID_DATE",
+      "entity": "P0003-I06"
+    },
+    {
+      "rule": "DUPLICATE_PAYMENT",
+      "entity": "PAY-DUPLICATE"
+    },
+    {
+      "rule": "ORPHAN_PAYMENT",
+      "entity": "PAY-ORPHAN"
+    }
+  ],
+  "corrections": [
+    {
+      "table": "installments",
+      "key": "P0001-I05",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0001-I06",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0001-I07",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0001-I08",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0001-I09",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0001-I10",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0001-I11",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0001-I12",
+      "field": "amount",
+      "value": "130.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0002-I07",
+      "field": "amount",
+      "value": "243.00"
+    },
+    {
+      "table": "installments",
+      "key": "P0003-I06",
+      "field": "due_date",
+      "value": "2026-12-01"
+    },
+    {
+      "table": "payments",
+      "key": "PAY-DUPLICATE",
+      "field": "__exclude__",
+      "value": "true"
+    },
+    {
+      "table": "payments",
+      "key": "PAY-ORPHAN",
+      "field": "__exclude__",
+      "value": "true"
+    }
+  ],
+  "entity_matches": [
+    {
+      "left": "C0001",
+      "right": "C-DUP-001",
+      "same_entity": true
+    },
+    {
+      "left": "C0001",
+      "right": "C0002",
+      "same_entity": false
+    },
+    {
+      "left": "C0002",
+      "right": "C-DUP-001",
+      "same_entity": false
+    }
+  ]
+}

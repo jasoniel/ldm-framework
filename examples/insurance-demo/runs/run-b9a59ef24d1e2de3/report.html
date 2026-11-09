@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LDM | Synthetic accounting close</title><style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#141d32;--line:#2a3852;--text:#edf2fc;--muted:#acbad1;--accent:#71d8c1;--red:#ff949d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 system-ui,-apple-system,sans-serif}main{max-width:1200px;margin:auto;padding:48px 28px}header{padding:20px 0 30px;border-bottom:1px solid var(--line)}h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:12px 0}h2{font-size:23px;margin-top:0}h3{color:var(--accent)}.eyebrow{color:var(--accent);letter-spacing:.16em;font-size:12px;font-weight:700}.muted,small{color:var(--muted)}.badge{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:4px 12px;margin:4px 6px 4px 0;font-size:12px}.blocked{color:var(--red)}.pass{color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:24px 0}.card,section{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}section{margin-top:24px}.number{font-size:32px;font-weight:750}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top}th{color:var(--accent);white-space:nowrap}td{max-width:480px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b1020;padding:16px;border-radius:8px;font-size:12px}details{border-top:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:600}.flow{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.flow span{background:#203047;padding:8px 12px;border-radius:8px}a{color:var(--accent)}button{background:var(--accent);color:var(--bg);border:0;padding:10px 16px;border-radius:8px;cursor:pointer}footer{padding:30px 0;color:var(--muted)}@media print{body{background:white;color:black}section,.card{background:white;border:1px solid #ccc;break-inside:avoid}.muted,small{color:#444}th,h3,a{color:#14584b}main{padding:10px}button{display:none}pre{background:#eee;color:black}}
+</style></head><body><main>
+<header><div class="eyebrow">LDM FRAMEWORK / INSURANCE LAB</div><h1>An accounting close<br>must explain the numbers.</h1><p class="muted">Diagnosis, endorsements, reconciliation and human review at a fictional insurer.</p><span class="badge">100% SYNTHETIC DATA</span><span class="badge blocked">BLOCKED</span><span class="badge">2026-11-30 · BRL</span><span class="badge">AI: not executed in this validation</span>
+<div class="flow"><span>01 Diagnosis</span><span>02 Integration</span><span>03 AI-Assisted Quality</span><span>04 Validation</span><span>05 Knowledge Transfer</span></div></header>
+<div class="grid"><div class="card"><div class="muted">Policies</div><div class="number">40</div></div><div class="card"><div class="muted">Critical issues</div><div class="number">5</div></div><div class="card"><div class="muted">Reviewed corrections</div><div class="number">0</div></div><div class="card"><div class="muted">Endorsement variance</div><div class="number">R$ 80.00</div></div></div>
+<section><h2>Release decision</h2><p>Release blocked. Totals are provisional; resolve the exceptions and run the pipeline again.</p><p class="muted">Technical approval in this example is not compliance certification. Simulated reviews: 0. Reviewer identity is self-declared locally, without authentication.</p><small>Run: run-b9a59ef24d1e2de3 · Rule: insurance-equal-remaining-v1</small></section>
+<section><h2>The endorsement scenario</h2><p>Original premium R$1,200 · four paid installments of R$100 · R$240 increase · eight remaining installments.</p><p><strong>Expected: 8 × R$130 = R$1,040.</strong> Inserted error: 8 × R$120 = R$960. A mathematical rule detects the R$80 difference; the optional model only proposes an investigation.</p><p class="muted">No interest, taxes, pro-rata or refunds. Laboratory rule: equal_remaining. Corrections never modify the original CSVs.</p></section>
+<section><h2>Exceptions blocking release</h2><details><summary><span class="blocked">DUPLICATE_PAYMENT</span> · PAY-DUPLICATE</summary><p>Repeated external payment reference; excluded from provisional totals pending review</p><pre>{
+  &quot;external_reference&quot;: &quot;BANK-0004-01&quot;,
+  &quot;identical_business_fields&quot;: true
+}</pre></details><details><summary><span class="blocked">ORPHAN_PAYMENT</span> · PAY-ORPHAN</summary><p>Payment has no matching installment</p><pre>{}</pre></details><details><summary><span class="blocked">ENDORSEMENT_RECONCILIATION</span> · P0001</summary><p>Scheduled amounts diverge from the versioned business rule</p><pre>{
+  &quot;updated_premium_cents&quot;: 144000,
+  &quot;scheduled_total_cents&quot;: 136000,
+  &quot;variance_cents&quot;: 8000,
+  &quot;paid_cents&quot;: 40000,
+  &quot;original_installment_count&quot;: 12,
+  &quot;affected_installments&quot;: [
+    {
+      &quot;installment_id&quot;: &quot;P0001-I05&quot;,
+      &quot;number&quot;: 5,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    },
+    {
+      &quot;installment_id&quot;: &quot;P0001-I06&quot;,
+      &quot;number&quot;: 6,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    },
+    {
+      &quot;installment_id&quot;: &quot;P0001-I07&quot;,
+      &quot;number&quot;: 7,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    },
+    {
+      &quot;installment_id&quot;: &quot;P0001-I08&quot;,
+      &quot;number&quot;: 8,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    },
+    {
+      &quot;installment_id&quot;: &quot;P0001-I09&quot;,
+      &quot;number&quot;: 9,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    },
+    {
+      &quot;installment_id&quot;: &quot;P0001-I10&quot;,
+      &quot;number&quot;: 10,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    },
+    {
+      &quot;installment_id&quot;: &quot;P0001-I11&quot;,
+      &quot;number&quot;: 11,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    },
+    {
+      &quot;installment_id&quot;: &quot;P0001-I12&quot;,
+      &quot;number&quot;: 12,
+      &quot;actual_cents&quot;: 12000,
+      &quot;expected_cents&quot;: 13000
+    }
+  ],
+  &quot;endorsements&quot;: [
+    {
+      &quot;endorsement_id&quot;: &quot;END-0001&quot;,
+      &quot;policy_id&quot;: &quot;P0001&quot;,
+      &quot;effective_date&quot;: &quot;2026-11-01&quot;,
+      &quot;after_installment&quot;: &quot;4&quot;,
+      &quot;premium_delta&quot;: &quot;240.00&quot;,
+      &quot;schedule_version&quot;: &quot;v2&quot;,
+      &quot;allocation_rule&quot;: &quot;equal_remaining&quot;
+    }
+  ],
+  &quot;rule&quot;: &quot;equal_remaining; exact integer cents; residual to earliest unpaid schedule positions&quot;
+}</pre></details><details><summary><span class="blocked">MISSING_AMOUNT</span> · P0002-I07</summary><p>Installment amount is missing or invalid</p><pre>{}</pre></details><details><summary><span class="blocked">INVALID_DATE</span> · P0003-I06</summary><p>Invalid installment date</p><pre>{
+  &quot;actual&quot;: &quot;2026-11-31&quot;,
+  &quot;expected_under_monthly_rule&quot;: &quot;2026-12-01&quot;
+}</pre></details></section>
+<section><h2>Reconciliation by policy</h2><p class="muted">Amounts in BRL. Balance includes all unsettled installments, including overdue amounts. Invalid sources make results provisional.</p><div class="scroll"><table><thead><tr><th>Policy</th><th>Product</th><th>Updated premium</th><th>Scheduled total</th><th>Paid</th><th>Balance</th><th>Variance</th><th>Status</th></tr></thead><tbody><tr><td>P0001</td><td>HOME</td><td>1440.00</td><td>1360.00</td><td>400.00</td><td>960.00</td><td>80.00</td><td>BLOCKED</td></tr><tr><td>P0002</td><td>LIFE</td><td>2916.00</td><td>—</td><td>972.00</td><td>—</td><td>—</td><td>BLOCKED</td></tr><tr><td>P0003</td><td>AUTO</td><td>1296.00</td><td>1296.00</td><td>432.00</td><td>864.00</td><td>0.00</td><td>BLOCKED</td></tr><tr><td>P0004</td><td>HOME</td><td>1032.00</td><td>1032.00</td><td>344.00</td><td>688.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0005</td><td>LIFE</td><td>1800.00</td><td>1800.00</td><td>600.00</td><td>1200.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0006</td><td>AUTO</td><td>1704.00</td><td>1704.00</td><td>568.00</td><td>1136.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0007</td><td>HOME</td><td>1644.00</td><td>1644.00</td><td>548.00</td><td>1096.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0008</td><td>LIFE</td><td>1380.00</td><td>1380.00</td><td>460.00</td><td>920.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0009</td><td>AUTO</td><td>1272.00</td><td>1272.00</td><td>424.00</td><td>848.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0010</td><td>HOME</td><td>2628.00</td><td>2628.00</td><td>876.00</td><td>1752.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0011</td><td>LIFE</td><td>1224.00</td><td>1224.00</td><td>408.00</td><td>816.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0012</td><td>AUTO</td><td>2772.00</td><td>2772.00</td><td>924.00</td><td>1848.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0013</td><td>HOME</td><td>2256.00</td><td>2256.00</td><td>752.00</td><td>1504.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0014</td><td>LIFE</td><td>1056.00</td><td>1056.00</td><td>352.00</td><td>704.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0015</td><td>AUTO</td><td>1044.00</td><td>1044.00</td><td>348.00</td><td>696.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0016</td><td>HOME</td><td>1236.00</td><td>1236.00</td><td>412.00</td><td>824.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0017</td><td>LIFE</td><td>1620.00</td><td>1620.00</td><td>540.00</td><td>1080.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0018</td><td>AUTO</td><td>1668.00</td><td>1668.00</td><td>556.00</td><td>1112.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0019</td><td>HOME</td><td>2508.00</td><td>2508.00</td><td>836.00</td><td>1672.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0020</td><td>LIFE</td><td>2808.00</td><td>2808.00</td><td>936.00</td><td>1872.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0021</td><td>AUTO</td><td>1032.00</td><td>1032.00</td><td>344.00</td><td>688.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0022</td><td>HOME</td><td>2676.00</td><td>2676.00</td><td>892.00</td><td>1784.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0023</td><td>LIFE</td><td>1560.00</td><td>1560.00</td><td>520.00</td><td>1040.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0024</td><td>AUTO</td><td>2952.00</td><td>2952.00</td><td>984.00</td><td>1968.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0025</td><td>HOME</td><td>2628.00</td><td>2628.00</td><td>876.00</td><td>1752.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0026</td><td>LIFE</td><td>2244.00</td><td>2244.00</td><td>748.00</td><td>1496.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0027</td><td>AUTO</td><td>1632.00</td><td>1632.00</td><td>544.00</td><td>1088.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0028</td><td>HOME</td><td>2328.00</td><td>2328.00</td><td>776.00</td><td>1552.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0029</td><td>LIFE</td><td>2760.00</td><td>2760.00</td><td>920.00</td><td>1840.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0030</td><td>AUTO</td><td>1812.00</td><td>1812.00</td><td>604.00</td><td>1208.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0031</td><td>HOME</td><td>972.00</td><td>972.00</td><td>324.00</td><td>648.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0032</td><td>LIFE</td><td>1440.00</td><td>1440.00</td><td>480.00</td><td>960.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0033</td><td>AUTO</td><td>2256.00</td><td>2256.00</td><td>752.00</td><td>1504.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0034</td><td>HOME</td><td>2004.00</td><td>2004.00</td><td>668.00</td><td>1336.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0035</td><td>LIFE</td><td>1812.00</td><td>1812.00</td><td>604.00</td><td>1208.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0036</td><td>AUTO</td><td>1428.00</td><td>1428.00</td><td>476.00</td><td>952.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0037</td><td>HOME</td><td>1620.00</td><td>1620.00</td><td>540.00</td><td>1080.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0038</td><td>LIFE</td><td>1992.00</td><td>1992.00</td><td>664.00</td><td>1328.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0039</td><td>AUTO</td><td>1272.00</td><td>1272.00</td><td>424.00</td><td>848.00</td><td>0.00</td><td>PASS</td></tr><tr><td>P0040</td><td>HOME</td><td>1236.00</td><td>1236.00</td><td>412.00</td><td>824.00</td><td>0.00</td><td>PASS</td></tr></tbody></table></div></section>
+<section><h2>Potential duplicate customer review</h2><p class="muted">Heuristic baseline: name similarity within shared addresses. This is neither AI nor a probability. Approvals create analytical associations; they do not merge source records or change financial amounts.</p><div class="scroll"><table><thead><tr><th>ID</th><th>Source A</th><th>Source B</th><th>Heuristic score</th><th>Decision</th><th>Simulated</th></tr></thead><tbody><tr><td>MATCH-12556038eb66</td><td>C-DUP-001</td><td>C0001</td><td>0.8526</td><td>pending</td><td></td></tr><tr><td>MATCH-a1bee6c7090a</td><td>C-DUP-001</td><td>C0002</td><td>0.9176</td><td>pending</td><td></td></tr><tr><td>MATCH-0e1c88f1b3f7</td><td>C0001</td><td>C0002</td><td>0.8333</td><td>pending</td><td></td></tr></tbody></table></div></section>
+<section><h2>Corrections applied after review</h2><p class="muted">No records.</p></section>
+<section><h2>Source inventory</h2><div class="scroll"><table><thead><tr><th>Source</th><th>Records</th><th>Key / grain</th><th>Missing values</th></tr></thead><tbody><tr><td>customers</td><td>41</td><td>customer_id</td><td>{}</td></tr><tr><td>policies</td><td>40</td><td>policy_id</td><td>{}</td></tr><tr><td>installments</td><td>480</td><td>installment_id</td><td>{&#x27;amount&#x27;: 1}</td></tr><tr><td>payments</td><td>162</td><td>payment_id</td><td>{}</td></tr><tr><td>endorsements</td><td>1</td><td>endorsement_id</td><td>{}</td></tr></tbody></table></div></section>
+<section><h2>AI-assisted investigation</h2><p>The live integration is optional and requires an operator-configured key and model. No AI response has been fabricated. Run <code>python -m ldm assist --help</code> to produce a separate hypothesis file with evidence references.</p></section>
+<footer>Reproducible educational experiment · no real customer information · no claim of deployment at Caixa/Youse · <button onclick="window.print()">Print report</button></footer>
+</main></body></html>

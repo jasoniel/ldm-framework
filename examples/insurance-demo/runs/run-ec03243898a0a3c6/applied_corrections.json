@@ -1,0 +1,122 @@
+[
+  {
+    "review_event_id": 1,
+    "request_id": "FIX-9565090a74bf",
+    "table": "payments",
+    "key": "PAY-DUPLICATE",
+    "field": "__exclude__",
+    "before": "present",
+    "after": "true",
+    "simulated": true
+  },
+  {
+    "review_event_id": 2,
+    "request_id": "FIX-82431a056351",
+    "table": "payments",
+    "key": "PAY-ORPHAN",
+    "field": "__exclude__",
+    "before": "present",
+    "after": "true",
+    "simulated": true
+  },
+  {
+    "review_event_id": 3,
+    "request_id": "FIX-f1201b164d69",
+    "table": "installments",
+    "key": "P0001-I05",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 4,
+    "request_id": "FIX-ee6ff5f6e46e",
+    "table": "installments",
+    "key": "P0001-I06",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 5,
+    "request_id": "FIX-59a71b27c3ea",
+    "table": "installments",
+    "key": "P0001-I07",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 6,
+    "request_id": "FIX-13dd9be2ad5a",
+    "table": "installments",
+    "key": "P0001-I08",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 7,
+    "request_id": "FIX-cf4296d34ca4",
+    "table": "installments",
+    "key": "P0001-I09",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 8,
+    "request_id": "FIX-fb31497b38d2",
+    "table": "installments",
+    "key": "P0001-I10",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 9,
+    "request_id": "FIX-db3ea031ebff",
+    "table": "installments",
+    "key": "P0001-I11",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 10,
+    "request_id": "FIX-b1ddae5e9eec",
+    "table": "installments",
+    "key": "P0001-I12",
+    "field": "amount",
+    "before": "120.00",
+    "after": "130.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 11,
+    "request_id": "FIX-cfbb63cd9c3a",
+    "table": "installments",
+    "key": "P0002-I07",
+    "field": "amount",
+    "before": "",
+    "after": "243.00",
+    "simulated": true
+  },
+  {
+    "review_event_id": 12,
+    "request_id": "FIX-d713920124a1",
+    "table": "installments",
+    "key": "P0003-I06",
+    "field": "due_date",
+    "before": "2026-11-31",
+    "after": "2026-12-01",
+    "simulated": true
+  }
+]

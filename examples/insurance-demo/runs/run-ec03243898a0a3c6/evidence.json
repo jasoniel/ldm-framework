@@ -1,0 +1,17 @@
+{
+  "dataset_kind": "synthetic",
+  "input_hash": "68abf4ed92d2cbb3b8c4ad5e4500eab7c703f46f96e1b539e7a2b285fb5b96e8",
+  "sources": {
+    "customers.csv": "52203cfc4829f2f5d359fcac2588d9ffeb4d72ad97f105129e0404a0e0c51ae9",
+    "policies.csv": "1092780bf7a3d9c65b60c110ff270729f06aacbcaa1fb78685bc0b037f03cd35",
+    "installments.csv": "2ff91e09050ef573804143b95d92278176f1cea46ed202a078f4b985679b50f3",
+    "payments.csv": "2c4e7f8f2937c7f5dea1547973a87c7762b8f3c0b7dcc23be64731135c292d9c",
+    "endorsements.csv": "966d67cf710434d7c72e446b3c171cc901c2596b3deae796b6405f719c6c05e1",
+    "config.json": "17383a4db4a709e4143420ccd882d97168b28a1663ff01ccb5886ad8de319f0c"
+  },
+  "code_hash": "d7a138eae42459d8121a0ae13c03e0556318546839ca9efa3eee6329d117e66a",
+  "rule_version": "insurance-equal-remaining-v1",
+  "as_of": "2026-11-30",
+  "review_head": "4d662560de8c5194e8e0f75aeff2d6dd39037b78f4914510e7742cf00e695fbe",
+  "notice": "Local hashes support reproducibility; they are not tamper-proof external attestation."
+}

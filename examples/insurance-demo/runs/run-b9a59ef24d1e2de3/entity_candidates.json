@@ -1,0 +1,50 @@
+[
+  {
+    "id": "MATCH-12556038eb66",
+    "left": "C-DUP-001",
+    "right": "C0001",
+    "score": 0.8526,
+    "method": "heuristic_name_similarity_shared_address_v1",
+    "is_ai": false,
+    "score_is_probability": false,
+    "evidence": {
+      "left_name": "Maria A. Example",
+      "right_name": "Maria Aparecida Example",
+      "shared_address": "120 Synthetic Street Apt 4"
+    },
+    "permitted_purpose": "synthetic_customer_reporting",
+    "status": "pending"
+  },
+  {
+    "id": "MATCH-a1bee6c7090a",
+    "left": "C-DUP-001",
+    "right": "C0002",
+    "score": 0.9176,
+    "method": "heuristic_name_similarity_shared_address_v1",
+    "is_ai": false,
+    "score_is_probability": false,
+    "evidence": {
+      "left_name": "Maria A. Example",
+      "right_name": "Maria Alice Example",
+      "shared_address": "120 Synthetic Street Apt 4"
+    },
+    "permitted_purpose": "synthetic_customer_reporting",
+    "status": "pending"
+  },
+  {
+    "id": "MATCH-0e1c88f1b3f7",
+    "left": "C0001",
+    "right": "C0002",
+    "score": 0.8333,
+    "method": "heuristic_name_similarity_shared_address_v1",
+    "is_ai": false,
+    "score_is_probability": false,
+    "evidence": {
+      "left_name": "Maria Aparecida Example",
+      "right_name": "Maria Alice Example",
+      "shared_address": "120 Synthetic Street Apt 4"
+    },
+    "permitted_purpose": "synthetic_customer_reporting",
+    "status": "pending"
+  }
+]

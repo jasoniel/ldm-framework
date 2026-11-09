@@ -1,0 +1,23 @@
+{
+  "notice": "Small synthetic fixture metrics only; not a production benchmark or evidence of live AI quality.",
+  "defect_detection": {
+    "expected": 5,
+    "detected": 5,
+    "missing": [],
+    "unexpected": [],
+    "fixture_recall": 1.0
+  },
+  "matching": {
+    "method": "heuristic baseline + reviewed associations; not AI",
+    "candidate_count": 3,
+    "true_duplicate_pairs": 1,
+    "candidate_recall": 1.0,
+    "reviewed_precision": 1.0,
+    "reviewed_recall": 1.0
+  },
+  "after": {
+    "release_status": "APPROVED",
+    "critical_count": 0,
+    "simulated_review_count": 15
+  }
+}
